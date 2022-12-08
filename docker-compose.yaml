@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  master:
+    build: .
+    hostname: redis-master
+    privileged: true
+
+  slave-1:
+    build: .
+    hostname: redis-slave-1
+    privileged: true
+   
+
+  client:
+    image: redis
+    command:
+      - sleep
+      - inf
