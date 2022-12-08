@@ -13,3 +13,5 @@ apt install -y redis-server redis-sentinel
 curl https://getmic.ro | bash && mv micro /usr/local/bin
 
 sed -i -E 's/^bind [0-9.]+ :+[0-9]$/bind 0.0.0.0/g' /etc/redis/redis.conf
+
+sed -i -E 's/^bind [0-9.]+ :+[0-9]$/bind 0.0.0.0/g' /etc/redis/sentinel.conf

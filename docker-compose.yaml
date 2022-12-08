@@ -12,8 +12,7 @@ services:
     privileged: true
    
 
-  client:
-    image: redis
-    command:
-      - sleep
-      - inf
+  slave-2:
+    build: .
+    hostname: redis-slave-2
+    privileged: true
