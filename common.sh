@@ -2,7 +2,8 @@
 
 set -ex
 
-export DEBIAN_FRONTEND=noninteractive
+# Turn on export DEBIAN_FRONTEND=noninteractive if docker run mysql
+#export DEBIAN_FRONTEND=noninteractive
 
 apt update
 
