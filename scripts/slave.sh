@@ -10,9 +10,9 @@ IP_SLAVE=$(ip addr show eth0 | grep 'inet ' | sed -E 's/\s+inet ([0-9.]+)\/[0-9]
 IP_MASTER=${IP_MASTER:-}
 REDIS_ROOT_PASS=${REDIS_ROOT_PASS:-password}
 
-# Input IP master change "dig +short master"
+# Input IP master change IP_MASTER
 
-if [ -z $IP_MASTER ]; then
+if [ -z $IP_MASTER ]; then 
   IP_MASTER="10.127.220.246"
 fi
 
