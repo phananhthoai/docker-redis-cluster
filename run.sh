@@ -12,5 +12,5 @@ set -ex
 ./common.sh
 
 # Turn on when run master or slave 
-./scripts/master.sh
-#./scripts/slave.sh
+#./scripts/master.sh
+./scripts/slave.sh
