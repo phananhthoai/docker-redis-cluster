@@ -46,9 +46,10 @@ echo "requirepass \"$REDIS_ROOT_PASS\"" | tee -a /etc/redis/redis.conf
 
 service redis-server restart
 
-echo "sentinel monitor redis-master \"$IP_MASTER\" 6379 2" | tee -a /etc/redis/sentinel.conf
-echo 'sentinel down-after-milliseconds redis-master 1500' | tee -a /etc/redis/sentinel.conf
-echo 'sentinel failover-timeout redis-master 3000' | tee -a /etc/redis/sentinel.conf
+echo "sentinel monitor master \"$IP_MASTER\" 6379 2" | tee -a /etc/redis/sentinel.conf
+echo 'sentinel down-after-milliseconds master 1500' | tee -a /etc/redis/sentinel.conf
+echo 'sentinel failover-timeout master 3000' | tee -a /etc/redis/sentinel.conf
+echo 'sentinel auth-pass master password' | tee -a /etc/redis/sentinel.conf
 echo 'protected-mode no' | tee -a /etc/redis/sentinel.conf
 
 service redis-sentinel restart
